@@ -1,35 +1,35 @@
 <!DOCTYPE html>
 <html>
 <body>
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script>
 function setCanvas() {
-var width = document.getElementById('width').value
-var height = document.getElementById('height').value
-document.getElementById('myCanvas').width = width
-document.getElementById('myCanvas').height = height
+	var width = document.getElementById('width').value;
+	var height = document.getElementById('height').value;
+	document.getElementById('myCanvas').width = width;
+	document.getElementById('myCanvas').height = height;
 }
 function drawCanvas() {
-var c = document.getElementById("myCanvas");
-var ctx = c.getContext("2d");
-var size = document.getElementById('size').value;
-var pitch = document.getElementById('pitch').value;
-var x = 0;
-var y = 0;
-ctx.clearRect(0, 0, c.width, c.height);
-ctx.fillStyle = "white";
-var text = "";
-while (y < c.height) {
-    while (x < c.width) {
-         ctx.fillRect(x, y, size, size);
-//text += "<br>x = " + x + " y = " + y; 
-         x = x + pitch * 1.0;
+	var c = document.getElementById("myCanvas");
+	var ctx = c.getContext("2d");
+	var size = document.getElementById('size').value;
+	var pitch = document.getElementById('pitch').value;
+	var x = 0;
+	var y = 0;
+	ctx.clearRect(0, 0, c.width, c.height);
+	ctx.fillStyle = "white";
+	var text = "";
+	while (y < c.height) {
+		while (x < c.width) {
+			 ctx.fillRect(x, y, size, size);
+			//text += "<br>x = " + x + " y = " + y; 
+			 x = x + pitch * 1.0;
 
-}
-x = 0;
-y = y + pitch * 1.0;
-}
-//document.getElementById("debug").innerHTML = text;
+			}
+		x = 0;
+		y = y + pitch * 1.0;
+		}
+	//document.getElementById("debug").innerHTML = text;
 }
 
 </script>
@@ -37,26 +37,23 @@ y = y + pitch * 1.0;
 
 <h1>mLED Array Simulator</h1>
 <div>
-<p>Width:  <input id="width" type="text" value="100"></p>
-<p>Height: <input id="height" type="text" value="100"></p>
-<p>Dot Size:  <input id="size" type="text" value="5"></p>
-<p>Dot Pitch: <input id="pitch" type="text" value="10"></p>
+	<p>Width:  <input id="width" type="text" value="100"></p>
+	<p>Height: <input id="height" type="text" value="100"></p>
+	<p>Dot Size:  <input id="size" type="text" value="5"></p>
+	<p>Dot Pitch: <input id="pitch" type="text" value="10"></p>
 </div>
 <div>
-<p><button type="button"
-onclick="setCanvas()">
-Set Canvas</button>
-<button type="button"
-onclick="drawCanvas()">
-Draw</button> 
-</p>
-<p id="debug"></p>
+	<p>
+		<button type="button" onclick="setCanvas()">
+		Set Canvas</button>
+		<button type="button" onclick="drawCanvas()">
+		Draw</button> 
+	</p>
+	<p id="debug"></p>
 </div>
 <div>
-<canvas id="myCanvas" width="100" height="100" style="background-color:black;">
+	<canvas id="myCanvas" width="100" height="100" style="background-color:black;">
 </div>
-
-
 
 </body>
 </html>
