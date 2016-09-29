@@ -65,6 +65,8 @@ function drawCanvas() {
 	button.addEventListener('click', function (e) {
 	    var dataURL = canvas.toDataURL("image/png");
 	    var imageElement = document.getElementById("output");  // Get the img object.
+	    imgElement.width = document.getElementById('myCanvas').width;
+	    imgElement.height = document.getElementById('myCanvas').height;
       	    imageElement.src = dataURL;                           // Set the src to data from the canvas.		
 	});	
 </script>
