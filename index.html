@@ -7,17 +7,19 @@
 function setCanvas() {
 	var width = document.getElementById('width').value;
 	var height = document.getElementById('height').value;
-	document.getElementById('myCanvas').width = width;
-	document.getElementById('myCanvas').height = height;
+	document.getElementById('canvas').width = width;
+	document.getElementById('canvas').height = height;
 }
 function drawCanvas() {
-	var c = document.getElementById("myCanvas");
+	var c = document.getElementById("canvas");
 	var ctx = c.getContext("2d");
 	var size = document.getElementById('size').value;
 	var pitch = document.getElementById('pitch').value;
 	var x = 0;
 	var y = 0;
 	ctx.clearRect(0, 0, c.width, c.height);
+	ctx.fillStyle = backgroundColor;
+	ctx.fillRect(0, 0, c.width, c.height);
 	ctx.fillStyle = "white";
 	var text = "";
 	while (y < c.height) {
@@ -25,16 +27,20 @@ function drawCanvas() {
 			 ctx.fillRect(x, y, size, size);
 			//text += "<br>x = " + x + " y = " + y; 
 			 x = x + pitch * 1.0;
-
 			}
 		x = 0;
 		y = y + pitch * 1.0;
 		}
 	//document.getElementById("debug").innerHTML = text;
 }
-
-
-	
+function createPic() {
+	var c = document.getElementById("canvas");
+	var dataURL = canvas.toDataURL("image/png");
+	var ouput = document.getElementById("output");  // Get the img object.
+	output.width = document.getElementById('canvas').width;
+	output.height = document.getElementById('canvas').height;
+    output.src = dataURL;  
+}	
 </script>
 
 
@@ -47,29 +53,19 @@ function drawCanvas() {
 </div>
 <div>
 	<p>
-		<button type="button" onclick="setCanvas()">
-		Set Canvas</button>
-		<button type="button" onclick="drawCanvas()">
-		Draw</button>
-		<a href="#" class="button" id="btn-download">Download</a>
+		<button type="button" onclick="setCanvas()">Set Canvas</button>
+		<button type="button" onclick="drawCanvas()">Draw</button>
+		<button type="button" onclick="createPic()">Create Picture</button>		
 	</p>
 	<p id="debug"></p>
 </div>
 <div>
-	<canvas id="myCanvas" width="500" height="500" style="background-color:black;"></canvas>
+	<canvas id="canvas" width="500" height="500" style="background-color:black;"></canvas>
+</div>
+<div>
 	<img id="output" src="" width="1" height="1"></img>
 </div>
-<script>
-	var canvas = document.getElementById("myCanvas");
-	var button = document.getElementById("btn-download");
-	button.addEventListener('click', function (e) {
-	    var dataURL = canvas.toDataURL("image/png");
-	    var imageElement = document.getElementById("output");  // Get the img object.
-	    imageElement.width = document.getElementById('myCanvas').width;
-	    imageElement.height = document.getElementById('myCanvas').height;
-      	    imageElement.src = dataURL;                           // Set the src to data from the canvas.		
-	});	
-</script>
+
 	
 	
 </body>
