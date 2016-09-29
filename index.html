@@ -33,6 +33,12 @@ function drawCanvas() {
 	//document.getElementById("debug").innerHTML = text;
 }
 
+var button = document.getElementById('btn-download');
+button.addEventListener('click', function (e) {
+    var dataURL = canvas.toDataURL('image/png');
+    button.href = dataURL;
+});	
+	
 </script>
 
 
@@ -48,7 +54,8 @@ function drawCanvas() {
 		<button type="button" onclick="setCanvas()">
 		Set Canvas</button>
 		<button type="button" onclick="drawCanvas()">
-		Draw</button> 
+		Draw</button>
+		<a href="#" class="button" id="btn-download">Download</a>
 	</p>
 	<p id="debug"></p>
 </div>
