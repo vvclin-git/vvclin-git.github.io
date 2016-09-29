@@ -33,11 +33,7 @@ function drawCanvas() {
 	//document.getElementById("debug").innerHTML = text;
 }
 
-var button = document.getElementById('btn-download');
-button.addEventListener('click', function (e) {
-    var dataURL = canvas.toDataURL('image/png');
-    button.href = dataURL;
-});	
+
 	
 </script>
 
@@ -62,6 +58,14 @@ button.addEventListener('click', function (e) {
 <div>
 	<canvas id="myCanvas" width="500" height="500" style="background-color:black;">
 </div>
-
+<script>
+	var button = document.getElementById('btn-download');
+	button.addEventListener('click', function (e) {
+	    var dataURL = canvas.toDataURL('image/png');
+	    button.href = dataURL;
+	});	
+</script>
+	
+	
 </body>
 </html>
