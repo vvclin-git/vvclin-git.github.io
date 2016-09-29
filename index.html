@@ -59,10 +59,10 @@ function drawCanvas() {
 	<canvas id="myCanvas" width="500" height="500" style="background-color:black;">
 </div>
 <script>
-	var canvas = document.getElementById('myCanvas');
-	var button = document.getElementById('btn-download');
+	var canvas = document.getElementById("myCanvas");
+	var button = document.getElementById("btn-download");
 	button.addEventListener('click', function (e) {
-	    var dataURL = canvas.toDataURL('image/png');
+	    var dataURL = canvas.toDataURL("image/png");
 	    button.href = dataURL;
 	});	
 </script>
