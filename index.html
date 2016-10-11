@@ -36,10 +36,10 @@ function drawCanvas() {
 		}
 	//document.getElementById("debug").innerHTML = text;
 	ctx.fillStyle = "black";
-	ctx.fillRect(0, 0, c.width, 50);
+	ctx.fillRect(0, 0, c.width, 15);
 	ctx.fillStyle = "white";
 	ctx.font = "10px Arial";
-	ctx.fillText("Size: "+ size + "x, Pitch: " + pitch + "x, Gap: " + gap + "x, Background: " + bg + "x",10,0);
+	ctx.fillText("Size: "+ size + "x, Pitch: " + pitch + "x, Gap: " + gap + "x, Background: " + bg + "x",10,10);
 }
 function createPic() {
 	var c = document.getElementById("canvas");
