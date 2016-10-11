@@ -27,6 +27,7 @@ function drawCanvas() {
 	var text = "";
 	while (y < c.height) {
 		while (x < c.width) {
+			console.log(x + "\n");
 			ctx.fillRect(x, y, size, size);
 			//text += "<br>x = " + x + " y = " + y; 
 			if (gap > 0) {
