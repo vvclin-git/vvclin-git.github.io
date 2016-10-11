@@ -46,7 +46,7 @@ function drawCanvas() {
 	ctx.fillRect(0, 0, c.width, 12);
 	ctx.fillStyle = "white";
 	ctx.font = "10px Arial";
-	ctx.fillText("Size: "+ size + "x, Pitch: " + pitch + "x, Gap: " + gap + "x, Background: " + bg + "x",10,10);
+	ctx.fillText(c.width + "x" + c.height + " Size: "+ size + "x, Pitch: " + pitch + "x, Gap: " + gap + "x, Background: " + bg + "x",10,10);
 }
 function createPic() {
 	var c = document.getElementById("canvas");
