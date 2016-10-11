@@ -32,7 +32,7 @@ function drawCanvas() {
 			//text += "<br>x = " + x + " y = " + y; 
 			if (gap > 0) {
 				if (x >= (c.width - gap) * 0.5 && x < (c.width - gap) * 0.5 + gap) {
-					x = x + gap;
+					x = x + gap * 1;
 				}
 			}
 			console.log(x + ", " + (c.width - gap) * 0.5 + ", " + ((c.width - gap) * 0.5 + gap * 1) + "\n");
