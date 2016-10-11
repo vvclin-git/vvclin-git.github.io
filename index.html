@@ -27,18 +27,18 @@ function drawCanvas() {
 	var text = "";
 	while (y < c.height) {
 		while (x < c.width) {
-			 ctx.fillRect(x, y, size, size);
+			ctx.fillRect(x, y, size, size);
 			//text += "<br>x = " + x + " y = " + y; 
 			if (gap > 0) {
-				if (x >= (c.width - gap) * 0.5 && x < (c.width - gap) * 0.5 + gap) {
+				if (x >= 350 && x < 400) {
 					x = x + gap;
 				}
 			}
 			 x = x + pitch * 1.0;
-			}
+		}
 		x = 0;
 		y = y + pitch * 1.0;
-		}
+	}
 	//document.getElementById("debug").innerHTML = text;
 	ctx.fillStyle = "black";
 	ctx.fillRect(0, 0, c.width, 12);
@@ -59,8 +59,8 @@ function createPic() {
 
 <h1>mLED Array Simulator</h1>
 <div>
-	<p>Width:  <input id="width" type="text" value="768"></p>
-	<p>Height: <input id="height" type="text" value="768"></p>
+	<p>Width:  <input id="width" type="text" value="750"></p>
+	<p>Height: <input id="height" type="text" value="750"></p>
 	<p>Dot Size:  <input id="size" type="text" value="5"></p>
 	<p>Dot Pitch: <input id="pitch" type="text" value="10"></p>
 	<p>Gap Width: <input id="gap" type="text" value="0"></p>
