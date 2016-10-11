@@ -29,6 +29,11 @@ function drawCanvas() {
 		while (x < c.width) {
 			 ctx.fillRect(x, y, size, size);
 			//text += "<br>x = " + x + " y = " + y; 
+			if (gap > 0) {
+				if (x >= (c.width - gap) * 0.5 && x < (c.width - gap) * 0.5 + gap) {
+					x = x + gap;
+				}
+			}
 			 x = x + pitch * 1.0;
 			}
 		x = 0;
@@ -36,7 +41,7 @@ function drawCanvas() {
 		}
 	//document.getElementById("debug").innerHTML = text;
 	ctx.fillStyle = "black";
-	ctx.fillRect(0, 0, c.width, 15);
+	ctx.fillRect(0, 0, c.width, 12);
 	ctx.fillStyle = "white";
 	ctx.font = "10px Arial";
 	ctx.fillText("Size: "+ size + "x, Pitch: " + pitch + "x, Gap: " + gap + "x, Background: " + bg + "x",10,10);
