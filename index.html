@@ -31,7 +31,7 @@ function drawCanvas() {
 			ctx.fillRect(x, y, size, size);
 			//text += "<br>x = " + x + " y = " + y; 
 			if (gap > 0) {
-				if (x >= (c.width - gap) * 0.5 && x < (c.width - gap) * 0.5 + gap) {
+				if (x >= (c.width - gap) * 0.5 && x < (c.width - gap) * 0.5 + gap * 1.0) {
 					x = x + gap * 1.0;
 				}
 			}
