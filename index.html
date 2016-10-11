@@ -30,8 +30,8 @@ function drawCanvas() {
 			ctx.fillRect(x, y, size, size);
 			//text += "<br>x = " + x + " y = " + y; 
 			if (gap > 0) {
-				if (x >= 350 && x < 400) {
-					x = x + 50;
+				if (x >= (c.width() - gap) * 0.5 && x < 400) {
+					x = x + gap;
 				}
 			}
 			 x = x + pitch * 1.0;
